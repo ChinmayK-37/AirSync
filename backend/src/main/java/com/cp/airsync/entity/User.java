@@ -1,10 +1,13 @@
 package com.cp.airsync.entity;
 
-import java.security.Timestamp;
 import java.time.LocalDateTime;
+
+import com.cp.airsync.enums.Role;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,16 +33,21 @@ public class User {
     @Column(name="created_at" )
     private LocalDateTime createdAt;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
     public User()
     {
         
     }
 
-    public User(String name, String email, String phone, String password, LocalDateTime createdAt) {
+    public User(String name, String email, String phone, String password, Role role, LocalDateTime createdAt) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.password = password;
+        this.role = role;
         this.createdAt = createdAt;
     }
 
@@ -89,5 +97,13 @@ public class User {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+    
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
