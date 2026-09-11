@@ -9,6 +9,6 @@ class HelloWorld{
     
     @GetMapping("/")
     public String helloWorld() {
-        return "Hello World! Welcome to Airsync!";
+        return "Welcome to Airsync!";
     }
 }

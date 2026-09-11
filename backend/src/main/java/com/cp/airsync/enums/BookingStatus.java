@@ -1,6 +1,6 @@
 package com.cp.airsync.enums;
 
-public enum BookinStatus {
+public enum BookingStatus {
     PENDING,
     CONFIRMED,
     CANCELLED

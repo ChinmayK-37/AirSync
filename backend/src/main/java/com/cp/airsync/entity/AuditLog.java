@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+
+
 @Entity
 @Table(name="audit_log")
 public class AuditLog
@@ -15,6 +17,7 @@ public class AuditLog
         @GeneratedValue(strategy=GenerationType.AUTO)
         @Column(name="log_id")
         private Long log_id;
+        
         private String action;
         private String entity_type;
         private String  entity_id;
