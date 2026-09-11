@@ -16,20 +16,26 @@ public class AuditLog
         @Id
         @GeneratedValue(strategy=GenerationType.AUTO)
         @Column(name="log_id")
-        private Long log_id;
+        private Long logId;
         
         private String action;
-        private String entity_type;
-        private String  entity_id;
+        
+        @Column(name="entity_type")
+        private String entityType;
+
+        @Column(name="entity_id")
+        private String  entityId;
+
         private String timestamp;
+        
         @OneToOne
         @JoinColumn(name="user_id")
         private User user;
-        public Long getLog_id() {
-                return log_id;
+        public Long getLogId() {
+                return logId;
         }
-        public void setLog_id(Long log_id) {
-                this.log_id = log_id;
+        public void setLogId(Long logId) {
+                this.logId = logId;
         }
         public String getAction() {
                 return action;
@@ -37,17 +43,17 @@ public class AuditLog
         public void setAction(String action) {
                 this.action = action;
         }
-        public String getEntity_type() {
-                return entity_type;
+        public String getEntityType() {
+                return entityType;
         }
-        public void setEntity_type(String entity_type) {
-                this.entity_type = entity_type;
+        public void setEntityType(String entityType) {
+                this.entityType = entityType;
         }
-        public String getEntity_id() {
-                return entity_id;
+        public String getEntityId() {
+                return entityId;
         }
-        public void setEntity_id(String entity_id) {
-                this.entity_id = entity_id;
+        public void setEntityId(String entityId) {
+                this.entityId = entityId;
         }
         public String getTimestamp() {
                 return timestamp;
