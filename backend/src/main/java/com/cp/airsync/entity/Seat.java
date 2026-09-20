@@ -2,6 +2,7 @@ package com.cp.airsync.entity;
 
 import com.cp.airsync.enums.SeatClass;
 import com.cp.airsync.enums.SeatStatus;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +21,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @Entity
 @Table(
     name = "seats",
@@ -45,6 +45,7 @@ public class Seat {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "flight_id", nullable = false)
+    @JsonBackReference
     private Flight flight;
 
     @Column(name = "seat_number", nullable = false)
