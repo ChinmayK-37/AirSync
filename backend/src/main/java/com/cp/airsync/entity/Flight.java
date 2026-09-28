@@ -65,7 +65,7 @@ public class Flight {
     @Enumerated(EnumType.STRING)
     private FlightStatus status;
 
-    @OneToMany(mappedBy = "flight")
-    @JsonManagedReference
-    private List<Seat> seats;
+    // @OneToMany(mappedBy = "flight")
+    // @JsonManagedReference
+    // private List<Seat> seats;
 }
