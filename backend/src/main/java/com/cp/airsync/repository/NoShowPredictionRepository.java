@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 
 import com.cp.airsync.entity.BookingSeat;
+import com.cp.airsync.entity.NoShowPrediction;
 
 @Repository
 public interface NoShowPredictionRepository extends JpaRepository<NoShowPrediction, Long>

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 
 import com.cp.airsync.entity.BookingSeat;
+import com.cp.airsync.entity.Cancellation;
 
 @Repository
 public interface CancellationRepository extends JpaRepository<Cancellation, Long>{
